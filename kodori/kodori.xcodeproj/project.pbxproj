@@ -1,0 +1,309 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEFB60231DA27B3E00E51C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */; };
+		FEFB60251DA27B3E00E51C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB60241DA27B3E00E51C0D /* ViewController.swift */; };
+		FEFB60281DA27B3E00E51C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFB60261DA27B3E00E51C0D /* Main.storyboard */; };
+		FEFB602A1DA27B3E00E51C0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEFB60291DA27B3E00E51C0D /* Assets.xcassets */; };
+		FEFB602D1DA27B3E00E51C0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFB602B1DA27B3E00E51C0D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FEFB601F1DA27B3E00E51C0D /* kodori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kodori.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FEFB60241DA27B3E00E51C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FEFB60271DA27B3E00E51C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FEFB60291DA27B3E00E51C0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FEFB602C1DA27B3E00E51C0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FEFB602E1DA27B3E00E51C0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEFB601C1DA27B3E00E51C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEFB60161DA27B3E00E51C0D = {
+			isa = PBXGroup;
+			children = (
+				FEFB60211DA27B3E00E51C0D /* kodori */,
+				FEFB60201DA27B3E00E51C0D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEFB60201DA27B3E00E51C0D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEFB601F1DA27B3E00E51C0D /* kodori.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEFB60211DA27B3E00E51C0D /* kodori */ = {
+			isa = PBXGroup;
+			children = (
+				FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */,
+				FEFB60241DA27B3E00E51C0D /* ViewController.swift */,
+				FEFB60261DA27B3E00E51C0D /* Main.storyboard */,
+				FEFB60291DA27B3E00E51C0D /* Assets.xcassets */,
+				FEFB602B1DA27B3E00E51C0D /* LaunchScreen.storyboard */,
+				FEFB602E1DA27B3E00E51C0D /* Info.plist */,
+			);
+			path = kodori;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEFB601E1DA27B3E00E51C0D /* kodori */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEFB60311DA27B3E00E51C0D /* Build configuration list for PBXNativeTarget "kodori" */;
+			buildPhases = (
+				FEFB601B1DA27B3E00E51C0D /* Sources */,
+				FEFB601C1DA27B3E00E51C0D /* Frameworks */,
+				FEFB601D1DA27B3E00E51C0D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = kodori;
+			productName = kodori;
+			productReference = FEFB601F1DA27B3E00E51C0D /* kodori.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEFB60171DA27B3E00E51C0D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "牛木 紀幸";
+				TargetAttributes = {
+					FEFB601E1DA27B3E00E51C0D = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 26S7Z3A9X2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FEFB601A1DA27B3E00E51C0D /* Build configuration list for PBXProject "kodori" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEFB60161DA27B3E00E51C0D;
+			productRefGroup = FEFB60201DA27B3E00E51C0D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEFB601E1DA27B3E00E51C0D /* kodori */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FEFB601D1DA27B3E00E51C0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEFB602D1DA27B3E00E51C0D /* LaunchScreen.storyboard in Resources */,
+				FEFB602A1DA27B3E00E51C0D /* Assets.xcassets in Resources */,
+				FEFB60281DA27B3E00E51C0D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEFB601B1DA27B3E00E51C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEFB60251DA27B3E00E51C0D /* ViewController.swift in Sources */,
+				FEFB60231DA27B3E00E51C0D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FEFB60261DA27B3E00E51C0D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEFB60271DA27B3E00E51C0D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FEFB602B1DA27B3E00E51C0D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FEFB602C1DA27B3E00E51C0D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FEFB602F1DA27B3E00E51C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FEFB60301DA27B3E00E51C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEFB60321DA27B3E00E51C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26S7Z3A9X2;
+				INFOPLIST_FILE = kodori/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "egao-inc.co.jp.kodori";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FEFB60331DA27B3E00E51C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 26S7Z3A9X2;
+				INFOPLIST_FILE = kodori/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "egao-inc.co.jp.kodori";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEFB601A1DA27B3E00E51C0D /* Build configuration list for PBXProject "kodori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEFB602F1DA27B3E00E51C0D /* Debug */,
+				FEFB60301DA27B3E00E51C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEFB60311DA27B3E00E51C0D /* Build configuration list for PBXNativeTarget "kodori" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEFB60321DA27B3E00E51C0D /* Debug */,
+				FEFB60331DA27B3E00E51C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEFB60171DA27B3E00E51C0D /* Project object */;
+}
