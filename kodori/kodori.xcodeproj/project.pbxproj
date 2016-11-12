@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE50EE641DD70C6000946BB6 /* LaughingMan.png in Resources */ = {isa = PBXBuildFile; fileRef = FE50EE631DD70C6000946BB6 /* LaughingMan.png */; };
+		FE613AA61DCA0180000DCE82 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE613AA51DCA0180000DCE82 /* CoreImage.framework */; };
 		FEFB60231DA27B3E00E51C0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */; };
 		FEFB60251DA27B3E00E51C0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB60241DA27B3E00E51C0D /* ViewController.swift */; };
 		FEFB60281DA27B3E00E51C0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEFB60261DA27B3E00E51C0D /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE50EE631DD70C6000946BB6 /* LaughingMan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaughingMan.png; sourceTree = "<group>"; };
+		FE613AA51DCA0180000DCE82 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		FEFB601F1DA27B3E00E51C0D /* kodori.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kodori.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEFB60241DA27B3E00E51C0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE613AA61DCA0180000DCE82 /* CoreImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE613AA41DCA0180000DCE82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE613AA51DCA0180000DCE82 /* CoreImage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEFB60161DA27B3E00E51C0D = {
 			isa = PBXGroup;
 			children = (
 				FEFB60211DA27B3E00E51C0D /* kodori */,
 				FEFB60201DA27B3E00E51C0D /* Products */,
+				FE613AA41DCA0180000DCE82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +68,7 @@
 		FEFB60211DA27B3E00E51C0D /* kodori */ = {
 			isa = PBXGroup;
 			children = (
+				FE50EE631DD70C6000946BB6 /* LaughingMan.png */,
 				FEFB60221DA27B3E00E51C0D /* AppDelegate.swift */,
 				FEFB60241DA27B3E00E51C0D /* ViewController.swift */,
 				FEFB60261DA27B3E00E51C0D /* Main.storyboard */,
@@ -91,7 +106,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "牛木 紀幸";
 				TargetAttributes = {
 					FEFB601E1DA27B3E00E51C0D = {
@@ -125,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEFB602D1DA27B3E00E51C0D /* LaunchScreen.storyboard in Resources */,
+				FE50EE641DD70C6000946BB6 /* LaughingMan.png in Resources */,
 				FEFB602A1DA27B3E00E51C0D /* Assets.xcassets in Resources */,
 				FEFB60281DA27B3E00E51C0D /* Main.storyboard in Resources */,
 			);
@@ -182,6 +198,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -231,6 +248,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -261,7 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26S7Z3A9X2;
 				INFOPLIST_FILE = kodori/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "egao-inc.co.jp.kodori";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,7 +293,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 26S7Z3A9X2;
 				INFOPLIST_FILE = kodori/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "egao-inc.co.jp.kodori";
 				PRODUCT_NAME = "$(TARGET_NAME)";
