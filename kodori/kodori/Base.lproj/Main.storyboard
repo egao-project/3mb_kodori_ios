@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,36 +22,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rx-hK-eKH">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rx-hK-eKH">
                                 <rect key="frame" x="41" y="637" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="SBY-zB-z0x"/>
+                                    <constraint firstAttribute="width" constant="32" id="jdK-pp-LXt"/>
+                                </constraints>
                                 <state key="normal" title="start"/>
                                 <connections>
                                     <action selector="tapStart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dl9-gW-zF7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGR-gi-Rb9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RGR-gi-Rb9">
                                 <rect key="frame" x="172" y="637" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="stop"/>
                                 <connections>
                                     <action selector="tapStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QdC-ga-UuN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAV-5w-liW">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAV-5w-liW">
                                 <rect key="frame" x="313" y="637" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Detect"/>
                                 <connections>
                                     <action selector="tapDetect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8sS-Pz-5OF"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-fp-FcL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jYh-fp-FcL">
                                 <rect key="frame" x="0.0" y="20" width="375" height="609"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jYh-fp-FcL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="0Gg-1q-8c9"/>
+                            <constraint firstItem="9Rx-hK-eKH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="BRh-bx-fDI"/>
+                            <constraint firstItem="jYh-fp-FcL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JSb-z5-TdS"/>
+                            <constraint firstItem="jYh-fp-FcL" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="R3t-4c-SLL"/>
+                            <constraint firstItem="9Rx-hK-eKH" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="R7O-VD-efk"/>
+                            <constraint firstItem="9Rx-hK-eKH" firstAttribute="baseline" secondItem="RGR-gi-Rb9" secondAttribute="baseline" id="TUS-G9-oc3"/>
+                            <constraint firstItem="NAV-5w-liW" firstAttribute="baseline" secondItem="RGR-gi-Rb9" secondAttribute="baseline" id="cPH-09-CQq"/>
+                            <constraint firstItem="NAV-5w-liW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="cqW-HB-bA9"/>
+                            <constraint firstItem="RGR-gi-Rb9" firstAttribute="leading" secondItem="9Rx-hK-eKH" secondAttribute="trailing" constant="99" id="gow-Pp-rnH"/>
+                            <constraint firstItem="9Rx-hK-eKH" firstAttribute="top" secondItem="jYh-fp-FcL" secondAttribute="bottom" constant="8" symbolic="YES" id="iUS-Vd-ITj"/>
+                            <constraint firstItem="9Rx-hK-eKH" firstAttribute="top" secondItem="jYh-fp-FcL" secondAttribute="bottom" constant="8" id="x6s-hn-gWu"/>
+                            <constraint firstItem="jYh-fp-FcL" firstAttribute="centerX" secondItem="RGR-gi-Rb9" secondAttribute="centerX" id="xrq-La-Tob"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="myImageView" destination="jYh-fp-FcL" id="qqw-ub-qW9"/>

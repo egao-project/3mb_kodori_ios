@@ -5,6 +5,7 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
     
     var detector: CIDetector!
     var maskImage: UIImage!
+    var mouthImage: UIImage!
     var startDate: NSDate!
     
     var mySession: AVCaptureSession!
@@ -119,10 +120,18 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
         context.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         for feature in features as! [CIFaceFeature] {
             var rect:CGRect = feature.bounds;
+            var mrect:CGRect  = feature.bounds;
             rect.origin.y = image.size.height - rect.origin.y - rect.height;
             if feature.hasSmile {
                 context.addRect(rect);
                 context.strokePath()
+                
+                //鼻
+                if feature.hasMouthPosition {
+                    mrect.origin.y = feature.mouthPosition.y;
+                    context.draw(mouthImage.cgImage!, in: mrect)
+                }
+                
             } else {
                 //CGContextDrawImage(context,rect,mask.cgImage)
                 context.draw(mask.cgImage!, in: rect)
@@ -151,9 +160,12 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
-        maskImage = UIImage(named: "LaughingMan.png")
+        maskImage = UIImage(named: "LaughingMan")
+        mouthImage = UIImage(named: "mouth")
         startDate = NSDate()
         prepareVideo()
+        mySession.startRunning()
+
     }
     
     override func didReceiveMemoryWarning() {
