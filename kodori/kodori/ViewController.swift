@@ -14,19 +14,18 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
     var myVideoOutput: AVCaptureVideoDataOutput!
     var detectFlag: Bool = false
     
-    
     @IBOutlet weak var myImageView: UIImageView!
     @IBAction func tapStart(_ sender: AnyObject) {
         mySession.startRunning()
     }
     @IBAction func tapStop(_ sender: AnyObject) {
         mySession.stopRunning()
+        self.saveImage()
     }
     @IBAction func tapDetect(_ sender: AnyObject) {
         detectFlag = !detectFlag
     }
     
-//    func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!) {
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
         print("captureOutput:didOutputSampleBuffer:fromConnection)")
         if connection.isVideoOrientationSupported {
@@ -65,16 +64,9 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
     func prepareVideo() {
         mySession = AVCaptureSession()
         mySession.sessionPreset = AVCaptureSessionPresetHigh
-        //let devices = AVCaptureDevice.devices()
         let device = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-/*        for device in devices! {
-            if ((device as AnyObject).position == AVCaptureDevicePosition.back) {
-                myCamera = device as! AVCaptureDevice
-            }
-        }*/
         do {
             myVideoInput = try AVCaptureDeviceInput(device: device)
-            //myVideoInput = try AVCaptureDeviceInput(device: myCamera)
             if (mySession.canAddInput(myVideoInput)) {
                 mySession.addInput(myVideoInput)
             } else {
@@ -84,7 +76,6 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
             myVideoOutput = AVCaptureVideoDataOutput()
             myVideoOutput.videoSettings =
                 [ kCVPixelBufferPixelFormatTypeKey as AnyHashable: Int(kCVPixelFormatType_32BGRA) ]
-                //[kCVPixelBufferPixelFormatTypeKey as AnyHashable : Int(kCVPixelFormatType_32BGRA)]
             let queue: DispatchQueue = DispatchQueue(label: "myqueue",  attributes: [])
             myVideoOutput.setSampleBufferDelegate(self,queue:queue)
             myVideoOutput.alwaysDiscardsLateVideoFrames = true
@@ -94,48 +85,24 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
                 print("cannot add output to session")
             }
             
-            /* // preview background
-             let myVideoLayer = AVCaptureVideoPreviewLayer(session: mySession)
-             myVideoLayer.frame = view.bounds
-             myVideoLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
-             view.layer.insertSublayer(myVideoLayer,atIndex:0)
-             */
         } catch let error as NSError {
             print("cannot use camera \(error)")
         }
     }
     
     func detectFace(image: UIImage) -> UIImage {
-        let deltaTime:Double = NSDate().timeIntervalSince(startDate as Date)
-        let modTime = deltaTime - Double(Int(deltaTime/4) * 4)
-        let mask = rotateImage(image: maskImage!, Float(3.1415 * modTime / 2))
-        
         let ciImage:CIImage! = CIImage(image: image)
+        //画像を180度回転
+        let mask = rotateImage(image: mouthImage!, Float(180 * M_PI / 180))
+        
         let options = [CIDetectorSmile:true]
         let features = detector.features(in: ciImage, options:options)
         UIGraphicsBeginImageContext(image.size);
         image.draw(in: CGRectMake(0,0,image.size.width,image.size.height))
         let context: CGContext = UIGraphicsGetCurrentContext()!
-        context.setLineWidth(5.0);
-        context.setStrokeColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         for feature in features as! [CIFaceFeature] {
-            var rect:CGRect = feature.bounds;
-            var mrect:CGRect  = feature.bounds;
-            rect.origin.y = image.size.height - rect.origin.y - rect.height;
-            if feature.hasSmile {
-                context.addRect(rect);
-                context.strokePath()
-                
-                //鼻
-                if feature.hasMouthPosition {
-                    mrect.origin.y = feature.mouthPosition.y;
-                    context.draw(mouthImage.cgImage!, in: mrect)
-                }
-                
-            } else {
-                //CGContextDrawImage(context,rect,mask.cgImage)
-                context.draw(mask.cgImage!, in: rect)
-            }
+            let mrect:CGRect  = feature.bounds;
+            context.draw(mask.cgImage!, in: mrect)
         }
         let img = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -157,11 +124,45 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
         return img!
     }
     
+    // セーブを行う
+    func saveImage() {
+        
+        // クリックした UIImageView を取得
+        let targetImageView = myImageView! // sender.view! as! UIImageView
+        
+        // その中の UIImage を取得
+        let targetImage = targetImageView.image!
+        
+        // UIImage の画像をカメラロールに画像を保存
+        UIImageWriteToSavedPhotosAlbum(targetImage, self, #selector(self.showResultOfSaveImage(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+
+    // 保存を試みた結果をダイアログで表示
+    func showResultOfSaveImage(_ image: UIImage, didFinishSavingWithError error: NSError!, contextInfo: UnsafeMutableRawPointer) {
+        
+        var title = "保存完了"
+        var message = "カメラロールに保存しました"
+        
+        if error != nil {
+            title = "エラー"
+            message = "保存に失敗しました"
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        // OKボタンを追加
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        // UIAlertController を表示
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         detector = CIDetector(ofType: CIDetectorTypeFace, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
         maskImage = UIImage(named: "LaughingMan")
-        mouthImage = UIImage(named: "mouth")
+        mouthImage = UIImage(named: "rabbit")
+        
         startDate = NSDate()
         prepareVideo()
         mySession.startRunning()
